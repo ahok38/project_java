@@ -1,0 +1,86 @@
+[33mcommit 9cf415c8e3cd243d26d0ab2b96caa5448e04dbd7[m
+Merge: 429d1f5 de1807d
+Author: Thorsten Koechling <th.kochling@gmail.com>
+Date:   Fri Jul 1 10:35:57 2016 +0200
+
+    Merge branch 'firstbranch' of github.com:upurath/Java_oop_2 into firstbranch
+
+[33mcommit de1807d9e9d4fc69d1ba4ff5ab6e7552700dbb4b[m
+Author: Ulrich Purath <u.purath@web.de>
+Date:   Mon Jun 27 20:41:18 2016 +0200
+
+    game.uxf uml datei und pdf-Bild hinzugefuegt, erstellt mit 'umlet'
+
+[33mcommit 429d1f58f36a0fd8ea5faa4b0df7601fedebd1e0[m
+Author: Thorsten Koechling <th.kochling@gmail.com>
+Date:   Mon Jun 27 13:49:03 2016 +0200
+
+    delete test file
+
+[33mcommit 63ced63892ad3e5e528f825db443791f355428c3[m
+Author: Thorsten Koechling <th.kochling@gmail.com>
+Date:   Mon Jun 27 13:45:55 2016 +0200
+
+    add an inventory class to hold the player and other creatures' items and equipment
+
+[33mcommit abf0c6b0544b5c67bdbd45acee640f3c201c0bb4[m
+Author: Thorsten Koechling <th.kochling@gmail.com>
+Date:   Mon Jun 27 13:07:36 2016 +0200
+
+    add interface for enemies and a class that implements the interface
+
+[33mcommit 768b70e69e57f0babfb8136c1d4002effbb82e11[m
+Author: Martin <martin@schneider.de>
+Date:   Mon Jun 27 09:39:32 2016 +0200
+
+    adds uml as png and java project
+
+[33mcommit b6dff974ec7d11eb5c20ef8a39b5ad761d2b0f79[m
+Merge: 8db78ab 9b95cde
+Author: Martin Schneider <martin@schneider.de>
+Date:   Mon Jun 20 18:26:10 2016 +0200
+
+    Merge branch 'firstbranch' of github.com:upurath/Java_oop_2 into firstbranch
+
+[33mcommit 8db78ab1a5262b8a8ad04aac05b3fdb67c8e06b0[m
+Author: Martin Schneider <martin@schneider.de>
+Date:   Mon Jun 20 18:25:25 2016 +0200
+
+    250nwk added
+
+[33mcommit 9b95cde7a88359f2c8396427b227f4ec3fc88707[m
+Author: Ulrich Purath <u.purath@web.de>
+Date:   Mon Jun 20 18:24:08 2016 +0200
+
+    machte eine Testdatei
+
+[33mcommit 9be1bfdb1d4218a33added70b79fbbcf93a9f36c[m
+Author: Ulrich Purath <u.purath@web.de>
+Date:   Mon Jun 20 18:18:17 2016 +0200
+
+    Jetz mach schon
+
+[33mcommit 91ab200e880e1bb3c6a2a1823a45c1b103150989[m
+Merge: dd9c4b5 96bb17f
+Author: tito <tito@stud-119-239.wlan.uni-giessen.de>
+Date:   Mon Jun 20 18:04:58 2016 +0200
+
+    Merge branch 'master' of github.com:upurath/Java_oop_2
+
+[33mcommit dd9c4b51a3b314a2ad7b2917cb4f9bc2fad7b599[m
+Author: tito <tito@stud-119-239.wlan.uni-giessen.de>
+Date:   Mon Jun 20 18:03:02 2016 +0200
+
+    test teeeest
+
+[33mcommit 96bb17f282ec74935961910998e55a3a381dcde6[m
+Author: Martin Schneider <martin@schneider.de>
+Date:   Mon Jun 20 18:02:10 2016 +0200
+
+    added nwk Text file
+
+[33mcommit f612eac239f76bdb8e7a135fe688998ceb3b64f7[m
+Author: Ulrich Purath <u.purath@web.de>
+Date:   Mon Jun 20 17:33:19 2016 +0200
+
+    first commit
