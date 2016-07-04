@@ -1,0 +1,7 @@
+Andreas		-->	creature
+Fabian		-->	Abstrakte Klasse inventory & treasure + weapon
+Jonas		-->	rooms
+Martin		-->	castle (Karte)
+Patrick		-->	Parser
+Thorsten	-->	GUI
+Ulrich		-->	?
