@@ -1,4 +1,4 @@
-package dnd;
+package gameMechanics;
 
 /**
  * Created by tito on 04.07.16.
@@ -20,8 +20,8 @@ public class Creature {
     }
 
     // object methods
-    public void attack() {
-        // TODO: implement
+    public int attack() {
+        return 15;
     }
 
     public void defend() {

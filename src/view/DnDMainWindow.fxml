@@ -19,9 +19,9 @@
             <Font name="Abyssinica SIL" size="18.0" />
          </font>
       </Label>
-      <ImageView fitHeight="199.0" fitWidth="373.0" layoutX="169.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="244.0" fitWidth="200.0" layoutX="238.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@castle.jpg" />
+            <Image url="@images/who_done_it.jpg" />
          </image>
       </ImageView>
       <Button layoutX="23.0" layoutY="460.0" mnemonicParsing="false" text="New Game" />

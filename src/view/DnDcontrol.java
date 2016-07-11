@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -25,7 +26,12 @@ public class DnDcontrol {
     private Stage primaryStage;
     private String currentWorkDir;
 
-
+    /*
+    @FXML
+    private Text blah = new Text();
+    blah.setText("huhuuuu!");
+    */
+    
     @FXML // ResourceBundle that was given to the FXMLLoader
     private ResourceBundle resources;
 
@@ -113,6 +119,7 @@ public class DnDcontrol {
          * (function must be defined in this or another class)
          */
         exit.setOnAction(this::exitPressed);
+        go_ahead.setOnAction(this::go_aheadPressed);
     }
 
 
@@ -120,8 +127,17 @@ public class DnDcontrol {
      * Action for pressed exit button.
      * @param actionEvent
      */
+
     private void exitPressed(ActionEvent actionEvent) {
         System.exit(0);
     }
+
+    //private Label testLabel;
+
+    private void go_aheadPressed(ActionEvent actionEvent) {
+        System.out.print("one step at a time");
+    }
+
+
 
 }
