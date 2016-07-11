@@ -14,6 +14,11 @@ package dnd;
  *
  * @author Martins
  */
+
+
+//public static void main(String[] args) {
+// 
+//}
 public class Castle {
 
     private Room[] roomsInCastle;
@@ -39,21 +44,24 @@ public class Castle {
         return null;
     }
 
-    String readFile(String fileName) throws IOException {
-        BufferedReader br = new BufferedReader(new FileReader(fileName));
+    String readFile(String fileName)  {
+       
+        StringBuilder sb = new StringBuilder();
         try {
-            StringBuilder sb = new StringBuilder();
+             BufferedReader br = new BufferedReader(new FileReader(fileName));
             String line = br.readLine();
-
             while (line != null) {
                 sb.append(line);
                 sb.append("\n");
                 line = br.readLine();
             }
-            return sb.toString();
-        } finally {
             br.close();
+        }catch (IOException e){
+            System.out.println(e);
+            System.out.println("no file for rooms: "+fileName);
         }
+            
+        return sb.toString();
     }
 
     String roomsInput = readFile("rooms.txt") ;
