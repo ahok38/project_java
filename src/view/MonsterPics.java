@@ -156,9 +156,11 @@ public class MonsterPics {
             yeenoghu, yellow_dragon};
 
     HashMap<String, Image> monsterPicsMap = new HashMap<>();
+    private int itemCount;
 
     public MonsterPics() {
         createPictureMap();
+        this.itemCount = 0;
     }
 
     private void createPictureMap() {
@@ -166,6 +168,18 @@ public class MonsterPics {
             for(int p = 0; p < monsterPics.length; p++) {
                this.monsterPicsMap.put(monsterNames[n], monsterPics[p]);
             }
+        }
+    }
+
+    public Image getNextItem() {
+        if (this.itemCount < this.monsterPics.length)
+        {
+            return this.monsterPics[this.itemCount++];
+        }
+        else
+        {
+            this.itemCount = 0;
+            return this.monsterPics[itemCount++];
         }
     }
 

@@ -89,6 +89,8 @@ public class DnDcontrol {
     @FXML // fx:id="clic"
     private Button clic;
 
+    @FXML
+    private ImageView x0y0img;
 
     /**
      * Init control
@@ -231,6 +233,8 @@ public class DnDcontrol {
 
     private void clicPressed(ActionEvent actionEvent) {
         infoPic.setImage(treasurepics.getNextItem());
+        x0y0img.setImage(monsterpics.getNextItem());
+
     }
 
     // implement or call the behavior expected from the game
