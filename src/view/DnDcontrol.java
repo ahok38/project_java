@@ -19,7 +19,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.TimerTask;
 
 /**
  * Created by andreas on 13.06.16.
@@ -90,7 +89,13 @@ public class DnDcontrol {
     private Button clic;
 
     @FXML
-    private ImageView x0y0img;
+    private ImageView img00, img01, img02, img03, img04, img05, img06,      // row 0 of visual map grid
+                      img10, img11, img12, img13, img14, img15, img16,      // row 1
+                      img20, img21, img22, img23, img24, img25, img26,      // row 2
+                      img30, img31, img32, img33, img34, img35, img36,      // row 3
+                      img40, img41, img42, img43, img44, img45, img46,      // row 4
+                      img50, img51, img52, img53, img54, img55, img56,      // row 5
+                      img60, img61, img62, img63, img64, img65, img66;      // row 6
 
     /**
      * Init control
@@ -169,12 +174,6 @@ public class DnDcontrol {
 
     }
 
-    // generate images for GUI
-
-    MonsterPics monsterpics = new MonsterPics();
-    WeaponPics weaponpics = new WeaponPics();
-    ArmorPics armorpics = new ArmorPics();
-    TreasurePics treasurepics = new TreasurePics();
     Image rip = new Image("/view/images/misc/grave.png");
 
     /**
@@ -198,8 +197,8 @@ public class DnDcontrol {
     }
 
     private void pick_upPressed(ActionEvent actionEvent) {
-        weaponPic.setImage(weaponpics.getNextItem());
-        armorPic.setImage(armorpics.getNextItem());
+        weaponPic.setImage(Pictures.getRandomPic(Pictures.weaponPics));
+        armorPic.setImage(Pictures.getRandomPic(Pictures.armorPics));
     }
 
     //private Label testLabel;
@@ -221,39 +220,43 @@ public class DnDcontrol {
     }
 
     private void testButtonPressed(ActionEvent actionEvent) {
-        // provide some info to this method as to which image to load (from game model)
-        Random rand = new Random();
-        int pic_num = rand.nextInt(monsterpics.monsterPics.length);
-        changeInfoPic(pic_num);
+        infoPic.setImage(Pictures.getRandomPic(Pictures.creaturePics));
     }
 
     private void new_gamePressed(ActionEvent actionEvent) {
-        messageWindow.appendText("\nNah... you don't seem worthy for this epic adventure.\n");
+        // test test test
+        loadDungeonMap(test);
+        messageWindow.appendText("\nLet's go!\n");
     }
 
     private void clicPressed(ActionEvent actionEvent) {
-        infoPic.setImage(treasurepics.getNextItem());
-        x0y0img.setImage(monsterpics.getNextItem());
+        infoPic.setImage(Pictures.getRandomPic(Pictures.treasurePics));
 
     }
 
     // implement or call the behavior expected from the game
     // when the player clicks on the "attack" button (thorsten)
     private void attackPressed(ActionEvent actionEvent) {   // test method (thorsten)
-        System.out.print("\nattack pressed\n");
-        Random rand = new Random();
-        String[] messages = {"\nHa! Try and hit me!\n", "\nCome on, I dare you!\n",
-                "\nNice one... not even close!\n", "\nFor real yo, you think I will let you beat me up?\n"};
-        messageWindow.appendText(messages[rand.nextInt(messages.length)]);
+        messageWindow.appendText("\nYou attack the monster and hit for x points of damage.\n");
     }
 
-    // need an array/ list of images to choose from based on some
-    // condition (e.g. map coordinates)
-    // or supply the id of the image to show as a parameter of the function call
-    private void changeInfoPic(int pic_num) {
 
-        infoPic.setImage(monsterpics.monsterPics[pic_num]);
+    Image[][] test = Pictures.mapOneImages;
+
+    private void loadDungeonMap(Image[][] images) {
+        ImageView[][] imageCells = {{img00, img01, img02, img03, img04, img05, img06},
+                                   {img10, img11, img12, img13, img14, img15, img16},
+                                   {img20, img21, img22, img23, img24, img25, img26},
+                                   {img30, img31, img32, img33, img34, img35, img36},
+                                   {img40, img41, img42, img43, img44, img45, img46},
+                                   {img50, img51, img52, img53, img54, img55, img56},
+                                   {img60, img61, img62, img63, img64, img65, img66}};
+
+        for(int i = 0; i < imageCells.length; i++) {
+            for(int j = 0; j < imageCells[0].length; j++) {
+                imageCells[i][j].setImage(images[i][j]);
+            }
+        }
     }
-
 
 }

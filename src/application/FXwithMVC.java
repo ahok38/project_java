@@ -31,7 +31,7 @@ public class FXwithMVC extends Application {
 
     private static void runAsCMDline(String[] args) {
         //TODO: implement cmd-line interface
-        System.out.println("Command Line Interface not yet implemented!");
+        System.out.println("this is a VIDEO game!");
     }
 
     @Override
