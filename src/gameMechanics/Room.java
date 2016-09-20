@@ -10,12 +10,15 @@ package gameMechanics;
  * @author Martins
  */
 public class Room {
-    boolean start;
-    boolean wayOut;
-    boolean roomNorth;
-    boolean roomSouth;
-    boolean roomEast;
-    boolean roomWest;
+    String Name = "";
+    boolean start = false;
+    boolean wayOut = false;
+    String roomNorth = "none";
+    String roomSouth = "none";
+    String roomEast = "none";
+    String roomWest = "none";
+    String description = "none";
+    String content = "none";
     NPC[] npcInsideRoom;
     Player[] playersInRoom;
     Item[] itemsInsideRoom;
@@ -27,12 +30,84 @@ public class Room {
         // TODO
     }
 
-    public Room(boolean start, boolean wayOut, boolean roomNorth, boolean roomSouth, boolean roomEast, boolean roomWest,
-        NPC[] npcInsideRoom, Player[] playersInRoom, Item[] itemsInsideRoom, FixItem[] itemsFixInRoom,
-        Door[] doorsInsideRoom) {
-            // TODO: implement constructor
+    public Room(String ininitalName, boolean ininitalStart, boolean ininitalWayOut, String ininitalRoomNorth, String ininitalRoomSouth, String ininitalRoomEast, String ininitalRoomWest,
+            String ininitalDescription, String ininitalContent, NPC[] ininitalNpcInsideRoom, Player[] ininitalPlayersInRoom, Item[] ininitalItemsInsideRoom,
+            FixItem[] ininitalItemsFixInRoom, Door[] ininitalDoorsInsideRoom, FixItem[] ininitalFixItemsInRoom) {
+        Name = ininitalName;
+        start = ininitalStart;
+        wayOut = ininitalWayOut;
+        roomNorth = ininitalRoomNorth;
+        roomSouth = ininitalRoomSouth;
+        roomEast = ininitalRoomEast;
+        roomWest = ininitalRoomWest;
+        description = ininitalDescription;
+        content = ininitalContent;
+        npcInsideRoom = ininitalNpcInsideRoom;
+        playersInRoom = ininitalPlayersInRoom;
+        itemsInsideRoom = ininitalItemsInsideRoom;
+        itemsFixInRoom = ininitalItemsFixInRoom;
+        doorsInsideRoom = ininitalDoorsInsideRoom;
+        fixItemsInRoom = ininitalFixItemsInRoom;
     }
-
+    
+    public Room(){
+        
+    }
+    
+    public String getName(){
+        return Name;
+    }
+    public void setName(String nameInput){
+        Name = nameInput;
+    }
+    public boolean getStart(){
+        return start;
+    }
+    public void setStart(boolean startInput){
+        start = startInput;
+    }
+     public boolean getWayOut(){
+        return wayOut;
+    }
+    public void setWayOut(boolean wayOutInput){
+        wayOut = wayOutInput;
+    }
+    public String getRoomNorth(){
+        return roomNorth;
+    }
+    public void setRoomNorth(String roomNorthInput){
+        roomNorth = roomNorthInput;
+    }
+    public String getRoomSouth(){
+        return roomSouth;
+    }
+    public void setRoomSouth(String roomSouthInput){
+        roomSouth = roomSouthInput;
+    }
+    public String getRoomEast(){
+        return roomEast;
+    }
+    public void setRoomEast(String roomEastInput){
+        roomEast = roomEastInput;
+    }
+    public String getRoomWest(){
+        return roomWest;
+    }
+    public void setRoomWest(String roomWestInput){
+        roomWest = roomWestInput;
+    }
+    public String getDescription(){
+        return description;
+    }
+    public void setDescription(String descriptionInput){
+        description = descriptionInput;
+    }
+    public String getContent(){
+        return content;
+    }
+    public void setContent(String contentInput){
+        content = contentInput;
+    }
     public void populateRoom() {
         // TODO
     }
