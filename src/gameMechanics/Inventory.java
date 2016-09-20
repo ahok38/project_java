@@ -1,4 +1,4 @@
-package dnd;
+package gameMechanics;
 
 /**
  * Created by tito on 7/1/16.

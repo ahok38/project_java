@@ -10,6 +10,8 @@ import java.io.IOException;
 
 package dnd;
 
+package gameMechanics;
+
 /**
  *
  * @author Martins
