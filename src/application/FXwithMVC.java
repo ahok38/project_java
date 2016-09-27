@@ -17,6 +17,7 @@ public class FXwithMVC extends Application {
 
     public static void main(String[] args) {
     gameMechanics.Castle.buildCastle();
+    System.out.println( gameMechanics.Castle.getCastleSize());
         if (args.length == 1 && args[0].equals(RUN_AS_CLI)) {
             runAsCMDline(args);
         } else {

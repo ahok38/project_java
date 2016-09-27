@@ -23,6 +23,7 @@ import java.util.regex.*;
 public class Castle {
 
     private static Room[] roomsInCastle;
+    private static Room[][] orderedRooms;
     public static String roomsInput = new String();
 
     public Castle(Room[] roomsInCastle) {
@@ -33,6 +34,7 @@ public class Castle {
         roomsInput = readFile("../rooms.txt");
         //System.out.println(roomsInput);
         parseRoomsText(roomsInput);
+        orderRoomPosition(roomsInCastle);
     }
     public static void setCastleSize(int inputSize){
         roomsInCastle = new Room[inputSize];
@@ -58,7 +60,19 @@ public class Castle {
         // TODO: implement
         return null;
     }
-
+    private static void orderRoomPosition (Room[] unordererRooms){
+        int toSetSize = getCastleSize() * 2;
+        orderedRooms = new Room[toSetSize][toSetSize];
+        
+        for(int i = 0; i < getCastleSize(); i++){
+            
+            if(unordererRooms[i].getName() == "Entry"){
+                
+                orderedRooms[toSetSize/2][toSetSize/2] = unordererRooms[i];
+            }
+        }
+        
+    }
     private static void parseRoomsText(String roomAllocation) {
 
         Pattern pattern = Pattern.compile("(.[^:]*):\\s(.*)");
@@ -107,9 +121,9 @@ public class Castle {
                             break;
                         case "Content":
                             newRoom.setContent(value);
-                            System.out.println(idx);
+                           //System.out.println(idx);
                             setRoomInCastle(newRoom, idx);
-                            System.err.println(roomsInCastle[idx].getName());
+                           //System.out.println(roomsInCastle[idx].getName());
                             idx++;
                             break;
                     }
