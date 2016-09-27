@@ -33,8 +33,8 @@ public class Castle {
     public static void buildCastle() {
         roomsInput = readFile("../rooms.txt");
         //System.out.println(roomsInput);
-        parseRoomsText(roomsInput);
-        orderRoomPosition(roomsInCastle);
+       roomsInCastle= parseRoomsText(roomsInput);
+        orderRoomPosition();
     }
     public static void setCastleSize(int inputSize){
         roomsInCastle = new Room[inputSize];
@@ -50,7 +50,11 @@ public class Castle {
         return this.roomsInCastle;
     }
     public static void setRoomInCastle(Room inputRoom, int index){
-        roomsInCastle[index] = inputRoom;
+       //System.out.println(inputRoom.getName());
+       roomsInCastle[index] =  inputRoom;
+        //roomsInCastle[index] =  inputRoom;
+        
+        System.out.println(getRoomInCastle(index).getName());
     }
     public static Room getRoomInCastle(int index){
         return roomsInCastle[index];
@@ -60,29 +64,43 @@ public class Castle {
         // TODO: implement
         return null;
     }
-    private static void orderRoomPosition (Room[] unordererRooms){
+    private static void orderRoomPosition (){
         int toSetSize = getCastleSize() * 2;
+        
+        
         orderedRooms = new Room[toSetSize][toSetSize];
         
         for(int i = 0; i < getCastleSize(); i++){
             
-            if(unordererRooms[i].getName() == "Entry"){
+            Pattern pattern = Pattern.compile("(.+)-(.+)");
+            String tmpString = (getRoomInCastle(i).getName()).replaceAll("\\s+","");
+           System.out.println(getRoomInCastle(i).getName());
+            Matcher match = pattern.matcher(tmpString);
+            if (match.find()) {
+                    String rowNum = match.group(1);
+                    String colNum = match.group(2);
+                    System.out.println(rowNum);
+                    //System.out.println(colNum);
+            }
+            
+            if(getRoomInCastle(i).getName() == "Entry"){
                 
-                orderedRooms[toSetSize/2][toSetSize/2] = unordererRooms[i];
+                orderedRooms[toSetSize/2][toSetSize/2] = roomsInCastle[i];
             }
         }
         
     }
-    private static void parseRoomsText(String roomAllocation) {
+    private static Room[] parseRoomsText(String roomAllocation) {
 
         Pattern pattern = Pattern.compile("(.[^:]*):\\s(.*)");
-
+        //Room newRoom = new Room();
         String[] roomsLineSep = roomAllocation.split("\n");
-        Room newRoom = new Room();
+        
         //System.out.println(roomAllocation.split("Name: ", -1).length-1);
         setCastleSize( roomAllocation.split("Name: ", -1).length-1);
         int idx = 0;
         for (String line : roomsLineSep) {
+             roomsInCastle[idx] = new Room();
             if (!line.isEmpty()) {
 
                 Matcher match = pattern.matcher(line);
@@ -92,37 +110,38 @@ public class Castle {
                     //System.out.println(value);
                     switch (key) {
                         case "Name":
-                            newRoom.setName(value);
+                            roomsInCastle[idx].setName(value);
+                            //System.out.println (roomsInCastle[idx].getName());
                             switch (value) {
                                 case "Entry":
-                                    newRoom.setStart(true);
-                                    newRoom.setWayOut(true);
+                                    roomsInCastle[idx].setStart(true);
+                                    roomsInCastle[idx].setWayOut(true);
                                     break;
                                 default:
-                                    newRoom.setStart(false);
-                                    newRoom.setWayOut(false);
+                                    roomsInCastle[idx].setStart(false);
+                                    roomsInCastle[idx].setWayOut(false);
                                     break;
                             }
                             break;
                         case "N":
-                            newRoom.setRoomNorth(value);
+                            roomsInCastle[idx].setRoomNorth(value);
                             break;
                         case "O":
-                            newRoom.setRoomEast(value);
+                            roomsInCastle[idx].setRoomEast(value);
                             break;
                         case "S":
-                            newRoom.setRoomSouth(value);
+                            roomsInCastle[idx].setRoomSouth(value);
                             break;
                         case "W":
-                            newRoom.setRoomWest(value);
+                            roomsInCastle[idx].setRoomWest(value);
                             break;
                         case "Description":
-                            newRoom.setDescription(value);
+                            roomsInCastle[idx].setDescription(value);
                             break;
                         case "Content":
-                            newRoom.setContent(value);
-                           //System.out.println(idx);
-                            setRoomInCastle(newRoom, idx);
+                            roomsInCastle[idx].setContent(value);
+                          // System.out.println(idx);
+                            //setRoomInCastle(roomsInCastle[idx], idx);
                            //System.out.println(roomsInCastle[idx].getName());
                             idx++;
                             break;
@@ -135,7 +154,10 @@ public class Castle {
 
             }// end if line.isEmpty 
         } // end for roomsLineSep
+        return roomsInCastle;
     } // end parseRoomsText
+    
+ 
 
     public static String readFile(String fileName) {
         File file = new File(Castle.class.getResource(fileName).getFile());

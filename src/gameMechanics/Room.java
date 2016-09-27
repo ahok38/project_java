@@ -10,6 +10,9 @@ package gameMechanics;
  * @author Martins
  */
 public class Room {
+    
+    private static Room room;
+    
     String Name = "";
     boolean start = false;
     boolean wayOut = false;
@@ -29,6 +32,8 @@ public class Room {
     void events () {
         // TODO
     }
+    
+    
 
     public Room(String ininitalName, boolean ininitalStart, boolean ininitalWayOut, String ininitalRoomNorth, String ininitalRoomSouth, String ininitalRoomEast, String ininitalRoomWest,
             String ininitalDescription, String ininitalContent, NPC[] ininitalNpcInsideRoom, Player[] ininitalPlayersInRoom, Item[] ininitalItemsInsideRoom,
@@ -50,8 +55,16 @@ public class Room {
         fixItemsInRoom = ininitalFixItemsInRoom;
     }
     
+    public  Room(Room newRoom){
+       this.room =newRoom;
+    }
     public Room(){
         
+    }
+    
+    public Object clone() throws CloneNotSupportedException {
+    Room octClone = (Room)super.clone();
+    return octClone;
     }
     
     public String getName(){
