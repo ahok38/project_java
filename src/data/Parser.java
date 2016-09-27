@@ -14,16 +14,6 @@ import java.io.InputStreamReader;
  */
 public class Parser {
 
-    public static void main(String[] args) throws IOException{
-        Creature[] yoo = collectCreatures();
-        for(int i=0;i<yoo.length;i++){
-            System.out.println("Name: " + yoo[i].getName());
-            System.out.println("Name: " + yoo[i].getSpecies());
-            System.out.println("Name: " + yoo[i].getDescription());
-            System.out.println("Name: " + yoo[i].getHp());
-        }
-    }
-
     private Parser(){}
 
 
@@ -83,6 +73,11 @@ public class Parser {
         return lineNumber;
     }
 
+    /**
+     * Returns an array that contains all creatures saved in creatures.txt
+     * @return Array with all creatures
+     * @throws IOException
+     */
     public static Creature[] collectCreatures()throws IOException{
         return parseCreatures("src/data/creatures.txt");
     }
