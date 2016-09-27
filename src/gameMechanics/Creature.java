@@ -6,13 +6,19 @@ package gameMechanics;
 public class Creature {
 
     String name;
+    String species;
+    String description;
+    int xp;
     int hp;
     int baseDamage;
     int armor;
     Weapon weapon;
 
-    public Creature(String name, int hp, int baseDamage, int armor, Weapon weapon) {
+    public Creature(String name, String species, String description, int xp, int hp, int baseDamage, int armor, Weapon weapon) {
         this.setName(name);
+        this.setSpecies(species);
+        this.setDescription(description);
+        this.setXp(xp);
         this.setHp(hp);
         this.setBaseDamage(baseDamage);
         this.setArmor(armor);
@@ -20,6 +26,9 @@ public class Creature {
     }
 
     // object methods
+
+
+
     public int attack() {
         return 15;
     }
@@ -32,6 +41,18 @@ public class Creature {
     // setters and getters
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void setSpecies(String species) {
+        this.species = species;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setXp(int xp) {
+        this.xp = xp;
     }
 
     public void setHp(int hp) {
@@ -54,6 +75,18 @@ public class Creature {
         return this.name;
     }
 
+    public String getSpecies() {
+        return this.species;
+    }
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    public int getXp() {
+        return this.xp;
+    }
+
     public int getHp() {
         return this.hp;
     }
@@ -69,5 +102,4 @@ public class Creature {
     public Weapon getWeapon() {
         return this.weapon;
     }
-
 }
