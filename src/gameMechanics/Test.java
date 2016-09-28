@@ -1,4 +1,4 @@
-package dnd.gameMechanics;
+package gameMechanics;
 
 /**
  * Created by Fabian Billenkamp on 17.07.2016.

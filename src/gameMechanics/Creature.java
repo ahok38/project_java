@@ -28,7 +28,10 @@ public class Creature {
     // object methods
 
 
-
+    /**
+     * Carries out an attack by the creature (Player or NPC)
+     * @return Int Value of the attack
+     */
     public int attack() {
         return 15;
     }

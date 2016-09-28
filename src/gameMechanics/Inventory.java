@@ -1,4 +1,4 @@
-package dnd.gameMechanics;
+package gameMechanics;
 import java.util.Iterator;
 /**
  * Class for an inventory for the game implementation, is iterable and using Item as an iterator

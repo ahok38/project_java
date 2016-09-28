@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dnd.gameMechanics;
+package gameMechanics;
 
 /**
  * Interface collecting methods that are shared by all items
  * @author Fabian Billenkamp
  */
-public interface   Item {
+public interface Item {
     /**
      * Setter method for the name of an item
      * @param name String: name of the item
