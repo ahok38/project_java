@@ -33,7 +33,7 @@ public class Creature {
      * @return Int Value of the attack
      */
     public int attack() {
-        return 15;
+        return baseDamage + weapon.getForce();
     }
 
     public void defend() {
