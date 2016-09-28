@@ -10,17 +10,15 @@ public class Creature {
     String description;
     int xp;
     int hp;
-    int baseDamage;
     int armor;
     Weapon weapon;
 
-    public Creature(String name, String species, String description, int xp, int hp, int baseDamage, int armor, Weapon weapon) {
+    public Creature(String name, String species, String description, int xp, int hp, int armor, Weapon weapon) {
         this.setName(name);
         this.setSpecies(species);
         this.setDescription(description);
         this.setXp(xp);
         this.setHp(hp);
-        this.setBaseDamage(baseDamage);
         this.setArmor(armor);
         this.setWeapon(weapon);
     }
@@ -33,7 +31,8 @@ public class Creature {
      * @return Int Value of the attack
      */
     public int attack() {
-        return baseDamage + weapon.getForce();
+        int dice = Control.throwDice();
+        return (xp * weapon.getForce()) + dice;
     }
 
     public void defend() {
@@ -62,10 +61,6 @@ public class Creature {
         this.hp = hp;
     }
 
-    public void setBaseDamage(int baseDamage) {
-        this.baseDamage = baseDamage;
-    }
-
     public void setArmor(int armor) {
         this.armor = armor;
     }
@@ -92,10 +87,6 @@ public class Creature {
 
     public int getHp() {
         return this.hp;
-    }
-
-    public int getBaseDamage() {
-        return this.baseDamage;
     }
 
     public int getArmor() {

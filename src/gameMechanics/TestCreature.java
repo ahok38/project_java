@@ -8,7 +8,7 @@ public class TestCreature {
     public static void main(String[] args){
         Weapon schwert = new Weapon();
         schwert.setForce(10);
-        Player testKreatur = new Player("Klaus", "Zwerg", "Kampfzwerg", 0, 100, 15, 0, schwert);
+        Player testKreatur = new Player("Klaus", "Zwerg", "Kampfzwerg", 1, 100, 15, schwert);
         System.out.println(testKreatur.attack());
     }
 }

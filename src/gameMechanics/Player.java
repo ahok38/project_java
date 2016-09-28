@@ -19,8 +19,8 @@ public class Player extends Creature {
     boolean hasDragonTreasure;
     Item[] itemsInInventory;
 
-    public Player(String name,String species, String description, int xp, int hp, int baseDamage, int armor, Weapon weapon) {
-        super(name, species, description,xp, hp, baseDamage, armor, weapon);
+    public Player(String name,String species, String description, int xp, int hp, int armor, Weapon weapon) {
+        super(name, species, description,xp, hp, armor, weapon);
         this.secondEnergieNow = 100;
         this.thirdEnergieNow = 100;
         this.inventorySpace = 10;

@@ -56,11 +56,11 @@ public class Parser {
             } else if(line.matches("Weapon: .*")){
                 weapon=new Weapon();
             } else if(line.matches("")){
-                allCreatures[arrayCount]=new Creature(name,species,description,xp,hp,baseDamage,armor,weapon);
+                allCreatures[arrayCount]=new Creature(name,species,description,xp,hp,armor,weapon);
                 arrayCount++;
             }
         }
-        allCreatures[arrayCount]=new Creature(name,species,description,xp,hp,baseDamage,armor,weapon);
+        allCreatures[arrayCount]=new Creature(name,species,description,xp,hp,armor,weapon);
 
         return allCreatures;
     }

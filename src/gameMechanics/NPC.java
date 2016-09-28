@@ -14,8 +14,8 @@ public class NPC extends Creature {
     int attitude;       // e.g.: 0 --> friendly (talk/ do nothing)
                         //       1 --> hostile (attack player)
 
-    public NPC(String name,String species, String description, int xp, int hp, int baseDamage, int armor, Weapon weapon, int attitude) {
-        super(name, species,description,xp, hp, baseDamage, armor, weapon);
+    public NPC(String name,String species, String description, int xp, int hp, int armor, Weapon weapon, int attitude) {
+        super(name, species,description,xp, hp, armor, weapon);
         this.setAttitude(attitude);
     }
 
