@@ -28,15 +28,24 @@ public class Creature {
 
     /**
      * Carries out an attack by the creature (Player or NPC)
-     * @return Int Value of the attack
+     * @return Int Value of the attack.
      */
     public int attack() {
         int dice = Control.throwDice();
         return (xp * weapon.getForce()) + dice;
     }
 
-    public void defend() {
-        // TODO: implement
+    /**
+     * If the creature gets attacked, it can defend itself and reduce the incoming damage.
+     * @param attackValue Value of the attack.
+     */
+    public void defend(int attackValue) {
+        int dice = Control.throwDice();
+        if(dice < 12 && dice > 6){
+            hp = hp - attackValue/2;
+        } else {
+            hp = hp - attackValue;
+        }
     }
 
 
