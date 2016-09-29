@@ -5,13 +5,13 @@ package gameMechanics;
  */
 public class Creature {
 
-    String name;
-    String species;
-    String description;
-    int xp;
-    int hp;
-    int armor;
-    Weapon weapon;
+    private String name;
+    private String species;
+    private String description;
+    private int xp;
+    private int hp;
+    private int armor;
+    private Weapon weapon;
 
     public Creature(String name, String species, String description, int xp, int hp, int armor, Weapon weapon) {
         this.setName(name);
