@@ -1,4 +1,4 @@
-Name: You 
+Name: You
 Species: Human
 Description: This is you.
 Experience: 1
@@ -7,7 +7,7 @@ BaseDamage: 4
 Armor: 2
 Weapon: Hand
 
-Name: Excursius 
+Name: Excursius
 Species: Dragon
 Description: A big green dragon, 5m tall with a 8m long tail.
 Experience: 3
@@ -16,7 +16,7 @@ BaseDamage: 10
 Armor: 4
 Weapon: Fire
 
-Name: Grodagrim 
+Name: Grodagrim
 Species: Dwarf
 Description: A small dwarf with a long battle axe.
 Experience: 2
@@ -25,7 +25,7 @@ BaseDamage: 7
 Armor: 3
 Weapon: Axe
 
-Name: Gothofiedus 
+Name: Gothofiedus
 Species: Rat
 Description: A 50cm sized rat; gray with intelligent eyes.
 Experience: 1
@@ -34,7 +34,7 @@ BaseDamage: 2
 Armor: 1
 Weapon: Teeth
 
-Name: Lothofiedus 
+Name: Lothofiedus
 Species: Rat
 Description: A 50cm sized rat; gray with intelligent eyes.
 Experience: 5
@@ -43,7 +43,7 @@ BaseDamage: 2
 Armor: 1
 Weapon: Teeth
 
-Name: Rothofiedus 
+Name: Rothofiedus
 Species: Rat
 Description: A 50cm sized rat; gray with intelligent eyes.
 Experience: 10
