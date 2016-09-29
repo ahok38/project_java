@@ -1,49 +1,113 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package gameMechanics;
 
 /**
- *
- * @author Martins
+ * Modelliert einen Raum in einem Verlies.
+ * Created by jonas on 27/09/16.
  */
 public class Room {
-    boolean start;
-    boolean wayOut;
-    boolean roomNorth;
-    boolean roomSouth;
-    boolean roomEast;
-    boolean roomWest;
-    NPC[] npcInsideRoom;
-    Player[] playersInRoom;
-    Item[] itemsInsideRoom;
-    FixItem[] itemsFixInRoom;
-    Door[] doorsInsideRoom;
-    FixItem[] fixItemsInRoom;
+    private String name;
+    private String nord;
+    private String ost;
+    private String sued;
+    private String west;
+    private String description;
+    private String content;
 
-    void events () {
-        // TODO
+    public Room(String name) {
+        this.name = name;
     }
 
-    public Room(boolean start, boolean wayOut, boolean roomNorth, boolean roomSouth, boolean roomEast, boolean roomWest,
-        NPC[] npcInsideRoom, Player[] playersInRoom, Item[] itemsInsideRoom, FixItem[] itemsFixInRoom,
-        Door[] doorsInsideRoom) {
-            // TODO: implement constructor
+
+    public Room(String name, String nord, String ost, String sued, String west, String description, String content) {
+        this.name = name;
+        this.nord = nord;
+        this.ost = ost;
+        this.sued = sued;
+        this.west = west;
+        this.description = description;
+        this.content = content;
     }
 
-    public void populateRoom() {
-        // TODO
+    public String getName() {
+        return name;
     }
 
-    public void createInventory() {
-        // TODO
+
+    public String getNord() {
+        return nord;
     }
 
-    public void createEncounter() {
-        // TODO
+
+    public String getOst() {
+        return ost;
+    }
+
+
+    public String getSued() {
+        return sued;
+    }
+
+
+    public String getWest() {
+        return west;
+    }
+
+
+    public String getDescription() {
+        return description;
+    }
+
+
+    public String getContent() {
+        return content;
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -14,6 +14,11 @@ import java.util.HashMap;
  */
 public class Parser {
 
+    public static void main(String[] ARGS)throws IOException{
+        HashMap<String,Creature> yoo= collectCreatures();
+        System.out.println(yoo.get("You").getWeapon().getName());
+    }
+
     private Parser(){}
 
     private static HashMap<String,Creature> parseCreatures (String file)throws IOException{
@@ -52,10 +57,12 @@ public class Parser {
 
                weapon=collectWeapons().get(line.substring(8));
             } else if(line.matches("")){
-                allCreatures.put(name,new Creature(name,species,description,xp,hp,baseDamage,armor,weapon));
+
+                allCreatures.put(name,new Creature(name,species,description,xp,hp,armor,weapon));
             }
         }
-        allCreatures.put(name,new Creature(name,species,description,xp,hp,baseDamage,armor,weapon));
+        allCreatures.put(name,new Creature(name,species,description,xp,hp,armor,weapon));
+
 
         return allCreatures;
     }

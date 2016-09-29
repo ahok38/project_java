@@ -6,14 +6,21 @@
 package gameMechanics;
 
 /**
- *
- * @author Martins
+ * This class contains the implementation of a base weapon for the game
+ * @author Fabian Billenkamp
  */
-public class Weapon extends Item{
 
-    String name;
-    int force;
-    String description;
+public class Weapon implements Item{
+    private String name;
+    private int force;
+    private String description;
+
+    /**
+     * Constructor for a weapon with name, force and a description
+     * @param name String: the name of the weapon
+     * @param force int: the power of the weapon
+     * @param description String: the descirption of the weapon
+     */
 
     public Weapon(String name, int force, String description) {
         this.setName(name);
@@ -21,27 +28,51 @@ public class Weapon extends Item{
         this.setDescription(description);
     }
 
-    public String getName() {
-        return name;
+
+    /**
+     * Default Constructor for a weapon
+     */
+    public Weapon(){}
+
+    /**
+     * Setter method for the power of a weapon
+     * @param force int: power value of the weapon (used for damage calculations)
+     */
+    public void setForce(int force) {
+        this.force = force;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    /**
+     * Getter method for the power of a weapon
+     * @return int: power value of the weapon (used for damage calculations)
+     */
 
     public int getForce() {
         return force;
     }
 
-    public void setForce(int force) {
-        this.force = force;
+
+    @Override
+    public void setDescription(String description) {
+        this.description=description;
     }
 
+    @Override
     public String getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+
+    @Override
+    public void setName(String name) {
+    this.name=name;
     }
+
+
+    @Override
+    public String getName() {
+        return name;
+    }
+
+
 }

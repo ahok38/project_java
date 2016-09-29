@@ -5,22 +5,20 @@ package gameMechanics;
  */
 public class Creature {
 
-    String name;
-    String species;
-    String description;
-    int xp;
-    int hp;
-    int baseDamage;
-    int armor;
-    Weapon weapon;
+    private String name;
+    private String species;
+    private String description;
+    private int xp;
+    private int hp;
+    private int armor;
+    private Weapon weapon;
 
-    public Creature(String name, String species, String description, int xp, int hp, int baseDamage, int armor, Weapon weapon) {
+    public Creature(String name, String species, String description, int xp, int hp, int armor, Weapon weapon) {
         this.setName(name);
         this.setSpecies(species);
         this.setDescription(description);
         this.setXp(xp);
         this.setHp(hp);
-        this.setBaseDamage(baseDamage);
         this.setArmor(armor);
         this.setWeapon(weapon);
     }
@@ -28,13 +26,26 @@ public class Creature {
     // object methods
 
 
-
+    /**
+     * Carries out an attack by the creature (Player or NPC)
+     * @return Int Value of the attack.
+     */
     public int attack() {
-        return 15;
+        int dice = Control.throwDice();
+        return (xp * weapon.getForce()) + dice;
     }
 
-    public void defend() {
-        // TODO: implement
+    /**
+     * If the creature gets attacked, it can defend itself and reduce the incoming damage.
+     * @param attackValue Value of the attack.
+     */
+    public void defend(int attackValue) {
+        int dice = Control.throwDice();
+        if(dice < 12 && dice > 6){
+            hp = hp - attackValue/2;
+        } else {
+            hp = hp - attackValue;
+        }
     }
 
 
@@ -57,10 +68,6 @@ public class Creature {
 
     public void setHp(int hp) {
         this.hp = hp;
-    }
-
-    public void setBaseDamage(int baseDamage) {
-        this.baseDamage = baseDamage;
     }
 
     public void setArmor(int armor) {
@@ -89,10 +96,6 @@ public class Creature {
 
     public int getHp() {
         return this.hp;
-    }
-
-    public int getBaseDamage() {
-        return this.baseDamage;
     }
 
     public int getArmor() {
